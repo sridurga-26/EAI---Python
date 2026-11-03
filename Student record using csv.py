@@ -1,10 +1,18 @@
 import csv 
-students = [ 
-    {"RollNo": "101", "Name": "Anitha", "Department": "CSE", "Mark": 86}, 
-    {"RollNo": "102", "Name": "Bala", "Department": "CSE", "Mark": 91}, 
-    {"RollNo": "103", "Name": "Chitra", "Department": "ECE", "Mark": 78} 
-]  
-course = ("Python", 4) 
+students = []  
+n = int(input("Enter number of students: "))
+
+for i in range(n):
+    print("\nStudent", i + 1)
+    roll = input("Enter Roll No: ")
+    name = input("Enter Name: ")
+    dept = input("Enter Department: ")
+    mark = int(input("Enter Mark: "))
+    students.append({"RollNo": roll, "Name": name, "Department": dept, "Mark": mark})
+
+course_name = input("\nEnter course name: ")
+credits = int(input("Enter credits: "))
+course = (course_name, credits)
 print("Course Tuple:", course) 
 with open("students.txt", "w") as file: 
     for student in students: 
